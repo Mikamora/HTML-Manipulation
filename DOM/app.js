@@ -51,13 +51,18 @@ document.addEventListener("DOMContentLoaded", function(){
     let arrOfFriends = ["john", 'jacob', 'justin', 'jordan', 'kasandra', 'matt', 'rachel', 'alex', 'josh', 'samantha'];
     let btn4 = document.getElementById("btn4");
     let ul = document.querySelector("ul");
+    let i = 0;
     btn4.addEventListener("click", function(){
-        for (let i = 0; i < arrOfFriends.length; i++) {
-            let li = document.createElement("li");
-            let liText = document.createTextNode(arrOfFriends[i]);
-            li.appendChild(liText);
-            ul.appendChild(li);
-        }
+            if (i < arrOfFriends.length) {
+                let li = document.createElement("li");
+                let liText = document.createTextNode(arrOfFriends[i]);
+                li.appendChild(liText);
+                ul.appendChild(li);
+                i++;
+            }
+            else {
+                alert("no more friends");
+            }
     })
 
 })
